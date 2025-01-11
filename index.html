@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>miyagi.Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="top"></div>
+    <header>
+        <h1>ようこそ私のポートフォリオへ！</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">自己紹介</a></li>
+                <li class="tooltip-container">
+                    <a href="#projects" id="projects-link1">作成プログラム紹介</a>
+                    <span class="tooltip-text">クリックで各タイトル<br />ダブルクリックで<br />見出しに移動</span></li>
+                        <ul id="projects-menu1" class="dropdown">
+                            <li><a href="#project1">半自動データチェックプログラム</a></li>
+                            <li><a href="#project2">リストデータ回収プログラム</a></li>
+                            <li><a href="#project3">書類作成テンプレ化及びバックアッププログラム</a></li>
+                        </ul>
+                <li><a href="#contact">連絡先</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="menu-toggle">☰</div>
+    <div id="sidebar">
+        <nav>
+            <ul>
+                <li><a href="#top">トップに戻る</a></li>
+                <li><a href="#about">自己紹介</a></li>
+                <li><a href="#projects" id="sidebar-projects-link" title="クリックで各タイトル、ダブルクリックで見出しに移動">作成プログラム紹介</a></li>
+                    <ul id="sidebar-projects-menu" class="submenu">
+                        <li><a href="#project1">半自動データチェックプログラム</a></li>
+                        <li><a href="#project2">リストデータ回収プログラム</a></li>
+                        <li><a href="#project3">書類作成テンプレ化及びバックアッププログラム</a></li>
+                    </ul>
+                <li><a href="#contact">連絡先</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="main-content">
+    <section id="about">
+        <h2>自己紹介</h2>
+        <p>AI生成の突っ走りやコードの生成、新規ツールや言語等に振り回されつつもなんとか食らいついている新人プログラマーです。</p>
+            <h3>プロフィール</h3>
+            <p><ul>
+                <li>アカウント名：宮城(miyagi1224worker)</li>
+                <li>学習開始日：2024年7月</li>
+                <li>主な学習言語：GAS/Python/VBA/HTML/CSS等</li>
+                <li>直近の一言：GPTが優秀なので現状の範囲内だとコードの中身を理解して少し弄るだけで成立するため、<br />AI作成に関する勉強が必要かもしれないと感じています。</li>
+    </section>
+    <section id="projects">
+        <h2>作成プログラム紹介</h2>
+        <article id="project1">
+            <h3>半自動データチェックプログラム</h3>
+            <p>作成されたデータが既存のデータと一致しているかをチェックするプログラム。
+                <hr />
+                <br />作成データの誤入力や新規データの検出、データの整形(半角数字への統一、空白･改行･特殊文字の削除等)を50件単位で同時に行い、必要に応じて新規データの
+                <br />アップロードや既存データの更新もボタン一つで半自動で行う。
+                <hr />
+                <br />このプログラムの導入により当時10人でも間に合わなかったチェック業務を数人で行えるようになった。
+                <br />また、使用するデータも必要に応じて容易に更新可能なためメンテナンスが不要となっている。
+                <hr />対象プラットフォーム：スプレッドシート
+                <br />使用言語：GAS,HTML(&lt;script&gt;)
+                <br />作成期間：初期版(1ヶ月)最終完成(5ヶ月)
+            </p>
+        </article>
+        <article id="project2">
+            <h3>リストデータ回収プログラム</h3>
+            <p>
+                チェックが完了した作成データを納品先の別シートへコピーし納品するプログラム。
+                <hr />
+                <br />パスを知っている人のみ起動できるような仕組みの導入とシートを跨いだ動作の学習も兼ねて作成。
+                <hr />
+                <br />作成後納品先のシートの形状の変化で一時的に機能停止してしまったため、変化しても問題ないようシートの特定方法を工夫した改良型に更新した。
+                <hr />対象プラットフォーム：スプレッドシート
+                <br />使用言語：GAS
+                <br />作成期間：初期版(約半月)更新型(約一週間)
+            </p>
+        </article>
+        <article id="project3">
+            <h3>書類作成テンプレート化及びバックアッププログラム</h3>
+            <p>
+                主な機能はプルダウンを用いた個人情報と市町村のテンプレ部分の変更の簡略化、
+                <br />書類完成後印刷可能な状態で各個人名のフォルダへ対象書類シートのファイルをコピー、関数部分を固定化し書類を保存する。
+                <br />また、各個人の提出書類の作成/更新期限もTODAY関数及び条件付き書式、VBAを利用してパッと見て緊急性が把握できる機能も搭載。
+                <hr />A型就労における各種提出書類について、各個人情報及び各市町村、作成日等の共通項目を
+                <br />プルダウンを用いて簡略化できないかと依頼され作成。
+                <hr />
+                <br />作成当初はプルダウン及びVLOOKUP等のExcel内関数のみで完結していたものの、作成完了後そのままの
+                <br />印刷可能な状態でバックアップを取れないかという要望の受け状況が一変。
+                <br />Excel及びVBAのみの環境においてコピーを作成し、かつ関数で設定していた値を固定化する方法を発見できなかった為急遽Pythonを導入。
+                <br />openpyxlでもシートのコピーは不可能であったためxlwingsを使用して作成した。
+                <hr />対象プラットフォーム：Excel
+                <br />使用言語：VBA･Python(xlwings)
+                <br />作成期間：約2ヶ月
+            </p>
+        </article>
+    </section>
+    <section id="contact">
+        <h2>連絡先</h2>
+        <p>Gmail: <a href="mailto:miyagi1224worker@gmail.com">miyagi1224worker@gmail.com</a></p>
+    </section>
+    </div>
+</body>
+</html>
